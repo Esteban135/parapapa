@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Día del Padre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      background: black;
+    }
+
+    .estrellas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .estrella {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: moverEstrella 60s linear infinite;
+    }
+
+    @keyframes moverEstrella {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .contenedor {
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      min-height: 100vh;
+    }
+
+    .titulo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
+      margin-bottom: 10px;
+      animation: fadeInDown 2s ease;
+    }
+
+    .subtitulo {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+      animation: fadeInUp 2s ease;
+    }
+
+    .foto {
+      max-width: 80%;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .mensaje {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin: 30px auto;
+      max-width: 800px;
+      animation: fadeIn 3s ease;
+    }
+
+    .versiculo {
+      font-style: italic;
+      font-size: 1.1em;
+      margin-top: 40px;
+      animation: fadeIn 4s ease;
+    }
+
+    .firma {
+      margin-top: 40px;
+      font-size: 1.3em;
+      font-weight: bold;
+      animation: fadeIn 5s ease;
+    }
+
+    .bendicion {
+      margin-top: 60px;
+      font-size: 1.5em;
+      animation: fadeIn 6s ease;
+    }
+
+    @keyframes fadeInDown {
+      0% {opacity: 0; transform: translateY(-30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      0% {opacity: 0; transform: translateY(30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .titulo { font-size: 2.5em; }
+      .subtitulo { font-size: 1.2em; }
+      .mensaje { font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="estrellas" id="estrellas"></div>
+
+  <div class="contenedor">
+    <h1 class="titulo">Feliz Día del Padre</h1>
+    <h2 class="subtitulo">Con todo mi amor, para ti papá</h2>
+
+    <img src="https://via.placeholder.com/700x300?text=Tu+Foto+Aqui" alt="Foto de Papá" class="foto" />
+
+    <p class="mensaje">
+      Hoy quiero darte las gracias por ser el mejor papá del mundo.<br>
+      Gracias por tus consejos, por tu ejemplo, por tus abrazos y por tu amor incondicional.<br>
+      Eres mi modelo a seguir, mi guía en los momentos difíciles y mi fuerza cuando me siento débil.<br><br>
+      Aunque a veces no lo diga, valoro cada momento contigo. Eres mi héroe, mi inspiración y mi mayor bendición.<br>
+      Te amo con todo mi corazón.
+    </p>
+
+    <p class="versiculo">
+      “El Señor es como un padre con sus hijos, tierno y compasivo con los que le temen.”<br>
+      — Salmos 103:13 (NTV)
+    </p>
+
+    <p class="firma">Tu hijo, Esteban</p>
+
+    <p class="bendicion">Que Dios te guarde y te bendiga</p>
+  </div>
+
+  <audio autoplay loop>
+    <source src="OscarMedina.mp3" type="audio/mp3"
+  </audio>
+
+  <script>
+    const estrellasContainer = document.getElementById('estrellas');
+    for (let i = 0; i < 150; i++) {
+      const estrella = document.createElement('div');
+      estrella.classList.add('estrella');
+      estrella.style.top = Math.random() * 100 + '%';
+      estrella.style.left = Math.random() * 100 + '%';
+      estrella.style.animationDuration = (Math.random() * 20 + 20) + 's';
+      estrella.style.opacity = Math.random();
+      estrella.style.width = estrella.style.height = Math.random() > 0.5 ? '2px' : '1px';
+      estrellasContainer.appendChild(estrella);
+    }
+  </script>
+</body>
+</html>
+
